@@ -1,0 +1,182 @@
+
+
+/* The nav bar takes up vertical space, so we have to move the rest of the page down */
+h1{
+    padding-top: 2em;
+    text-align: center;
+}
+
+.player-turn{
+    text-align: center;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.aboveTable{
+    position: relative;
+    display: block;
+    font-size:0;
+}
+
+.game{
+    position: relative;
+    border-collapse: collapse;
+    top: 10px;
+    width: 432px;
+    height: 492px;
+    margin: 5px;
+}
+
+#evaluate-board{
+    background: blue; 
+    position: relative;
+    border-collapse: collapse;
+    top: 10px;
+    width: 315px;
+    height: 270px;
+    margin: 5px;
+}
+
+.arrow {
+    background: red;
+    width: 25px;
+    height: 50px;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+#arrow-container{
+    border-radius: 25%;
+}
+
+.mm-walkthrough table{
+    color: black;
+    border-collapse: collapse;
+    position: relative;
+    background-color: white;
+    width: 80%;
+    padding: 5px;
+    border: solid 1px black;
+}
+
+.mm-walkthrough tr{
+    border: solid 1px black;
+}
+
+.mm-walkthrough td{
+    color: black;
+    border: solid 1px black;
+    text-align: center;
+}
+
+.row{
+    background-color: blue;
+}
+
+td{
+    color:white;
+    text-align: center;
+}
+
+#board{
+    border-collapse: collapse;
+}
+
+.slot{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background:rgb(200, 225, 250);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: grab;
+}
+
+.slot1{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background:blue;
+    display: block;
+    font-size: 0;
+    cursor: grab;
+}
+
+.slot2{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background:blue;
+    display: block;
+    font-size: 0;
+    cursor: grab;
+}
+
+.controls{
+    position: relative;
+    border-collapse: collapse;
+    top: 90px;
+    height: 420px;
+    width: 250px;
+    margin: 5px;
+}
+
+.space{
+    width: 100;
+    height: 2%;
+}
+
+.reset{
+    display: block;
+    top: 10px;
+    margin: auto;
+    border: 1px solid black;
+    width: 40%;
+    text-align: center;
+    cursor: grab;
+}
+
+.automaticplay{
+    width: 100%;
+    font-size: 12px;
+}
+
+.next-move{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    text-align: center;
+    background: rgb(255, 91, 91);
+    cursor: grab;
+}
+
+.slidecontainer{
+    display: block;
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.slider{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    width: 80%; /* Full-width */
+    height: 25%; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+}
+
+/*.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+}*/

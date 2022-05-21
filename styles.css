@@ -1,0 +1,187 @@
+
+/* Color scheme */
+/* #150A41, #FFE1C8, #55003B */
+/* light blue: rgb(200, 225, 250) */
+/* rgb(25, 75, 45) */
+
+/* nav bar styling */
+#nav {
+   z-index: 500;  /* Prevent content from overlapping nav bar */
+
+}
+
+/* Styling of nav bar list */
+/* Perhaps some of the below is not used? */
+#nav ul {
+   display: inline;
+   list-style-type: none;
+   margin: 0px;
+   padding: 10px;
+   overflow: hidden;
+   background-color: midnightblue;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+  }
+
+/* Orient list horizontal, not vertical */
+#nav ul li {
+   display: inline-block;
+   color: rgb(238, 252, 255);
+   padding: 10px;
+}
+
+/* Link colors in nav bar */
+#nav li > a {
+   color: rgb(238, 252, 255);
+}
+
+/* Remove underlines in the links in the nav bar */
+#nav li a:link { text-decoration: none; }
+#nav li a:visited { text-decoration: none; }
+#nav li a:hover { text-decoration: none; }
+#nav li a:active { text-decoration: none; }
+
+
+/* The nav bar takes up vertical space, so we have to move the rest of the page down */
+h1 {
+   padding-top: 2em;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(238, 252, 255); 
+   text-align: left;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 14;
+   min-height: 100vh;
+}
+
+/* What is this for? */
+label {
+    display: inline-block;
+    width: 150px;
+ }
+
+/* Style the Header tag */
+h1 {
+   text-align: center;
+}
+
+/* Make a grid for the puzzles */
+#grid-container {
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   margin-bottom: 20px;
+}
+
+/* Styles for the grid for the puzzles (div elements) in the grid 
+ * and make it a flex container
+ */
+#grid-container > div {
+   text-align: center;
+   border:brown;
+}
+
+#connectFourButtonDiv {
+   margin-top: 60px;
+}
+
+img {
+   border-radius: 0px 0px 0px 0px; /* Stop iphone browser showing rounded edges */
+}
+
+/* Images */
+#sudokuImage {
+   width: 400px; 
+   height: 360px; 
+   object-fit: none; 
+   object-position: 58% 55%;
+   border-radius: 0px 0px 0px 0px; /* Stop iphone browser showing rounded edges */
+   -webkit-border-radius: 0px;
+}
+
+#connectFourImage {
+   width: 400px; 
+   height: auto; 
+   object-fit: cover; 
+   object-position: 90% 55%;
+}
+
+/* Links that are play buttons  */
+.button {
+   display: inline-block;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   font-weight: 400;
+   text-align: center;
+   white-space: nowrap;
+   vertical-align: middle;
+   -ms-touch-action: manipulation;
+   touch-action: manipulation;
+   cursor: pointer;
+   background-image: none;
+   border: 1px solid transparent;
+   padding: 6px 10px;
+   font-size: 14px;
+   line-height: 1.42857143;
+   border-radius: 4px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
+   color: white;
+   background-color: rgb(39, 116, 70); /*rgb(48, 3, 153);*/
+   border-color: rgb(17, 49, 30);
+}
+
+.button:disabled {
+   color: #fff;
+   background-color: rgba(25, 75, 45);
+   border-color: rgb(34, 47, 39);
+}
+
+/*TODO: Disable hover if the button is not active */
+.button:hover {
+   color: #fff;
+   background-color: rgba(25, 75, 45) /*rgb(17, 49, 30);*/
+}
+
+/* Space at the bottom */
+.spacebelow {
+   margin-bottom: 100px;
+}
+
+/* Space at the top */
+.spaceabove {
+   margin-top: 50px;
+}
+
+#footerdiv {
+   display: flex;
+   flex-direction: column;
+}
+
+footer{
+   position: relative;
+   padding: 10px; 
+   background-color: rgb(242, 218, 204);
+   flex: auto;
+   height: auto;
+   margin: -8px;
+}
+
+/* Generics for fieldset */
+fieldset {
+   background-color: white;
+}
+
+.colorkeybox {
+   background-color: white;
+   padding: 10px;
+   width: 60%;
+   margin: 0 auto;
+}

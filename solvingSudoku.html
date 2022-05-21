@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+
+    <!-- Code to include nav bar-->
+    <div id="nav">
+        <a href="nav.html">Navigation Page</a>
+    </div>
+    <!--General styles; common to most pages-->
+    <link rel="stylesheet" href="styles.css">
+    <!--JavaScript for nav bar-->
+    <script src="script.js"></script>
+
+    <!--Styles specific to this page-->
+    <link rel="stylesheet" href="sudoku/sudokuStyles.css">
+
+</head>
+
+<body>
+    <header> <h1>Solving Sudoku</h1> </header>    
+    <main>
+        <h2>How to Play</h2>
+        A Sudoku board is made up of a 9x9 grid of 81 boxes. The grid includes 9 subgrids
+        of size 3x3. The puzzle is solved when each of the 81 boxes contain an integer 
+        between 1 and 9, and all of the integers 1-9 appear in every row, column, and
+        3x3 subgrid of the board. The board starts with preset or "fixed" numbers 
+        that cannot be changed. The player's task is to solve the puzzle by filling in the
+        remaining boxes.
+
+        <h2>The Sudoku Solver</h2>
+        <p>Sudoku is a type of Constraint Satisfaction Problem, or
+        <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">CSP</a>.
+        The solver uses the Arc Consistency Algorithm #3 ( 
+        <a href="https://en.wikipedia.org/wiki/AC-3_algorithm">AC-3</a>), and
+        <a href="https://simple.wikipedia.org/wiki/Backtracking">backtracking</a> with the
+        Minimum Remaining Values and degree heuristics.</p>
+
+        <h3>AC-3</h3>
+        <p>To use AC-3, first every box of the cell is given a domain of possible integers 1-9,
+        with the exception of the boxes with fixed starting values. For fixed boxes, the domain
+        consists of the fixed value.</p>
+        
+        <p>Next, a list of constraints is created for each
+        box. For example, the box at (row, column) = (1,1) must not have the same value
+        as any box in its row (e.g. the boxes at (1,1), (1,2), ... (1,9)), any box in its
+        column (i.e. (2,1), (3,1), ... (9,1)), or any box in its subgrid (i.e. (1,2), (1,3), (2,1), (2,2), (2,3)
+        (3,1), (3,2), (3,3)). Leaving out repeats, these represent the 20 constraints for box (1,1).</p>
+
+        <p>AC-3 progresses by going through the list of constraints one by one. For each box x<sub>i</sub> and
+        constraining box x<sub>j</sub>, if there is a single value in the domain of x<sub>j</sub>, that value is 
+        removed from the domain of x<sub>i</sub>. If this causes the domain of x<sub>i</sub> to contain only a 
+        single value, then a new set of "reverse 
+        constraints" is added to the list of constraints, to be worked through. For the reverse constraints,
+        the box that was previously x<sub>i</sub> becomes the constraining box x<sub>j</sub> for all the boxes 
+        that share its row,
+        column, and subgrid.</p>
+
+        <p>After all the constraints have been worked through, the puzzle may not be completely solved. Thus
+        AC-3 is not necessarily sufficient to find a solution, if one exists. In this case, another method is
+        needed.</p>
+
+        <h3>Backtracking</h3>
+        <p>Backtracking is basically a trial-and-error method for solving the puzzle. For an empty Sudoku box, 
+        a value is selected from the domain of allowable values that fit the constraints. These could be chosen
+        randomly, in order, or using a heuristic as described below. The box is filled in with the guess value,
+        and then used to constrain the boxes that share the row, column, and subgrid. The process is repeated 
+        for another empty Sudoku box, new constraints are accounted for, and so on. 
+        This continues until either the puzzle is solved, or a box 
+        is found to have no allowable value  (because all values 1-9 are already present in the row, column, and subgrid). 
+        If there is no allowable value, the algorithm "backtracks" to the last box that had multiple values
+        in its domain, emptying boxes as it backs up. A different value from the domain is tried, and the algorithm
+        proceeds forward again for as long as it can. Because of the need to undo changes when the algorithm
+        backtracks, recursion is generally used.</p>
+
+        <p>Backtracking can be used alone or in conjuction with another method like AC-3. For example, if
+        AC-3 fails to complete the puzzle, backtracking can take over. Unlike AC-3, backtracking can almost
+        always solve a Sudoku puzzle if it is solveable. Backtracking can be done in any order, as long as
+        it avoids repeating.
+        </p>
+
+        <h3>Heuristics</h3>
+        <p>To speed up the solver, heuristics can be used. A <a href="https://en.wikipedia.org/wiki/Heuristic">
+        heuristic</a> is a problem-solving technique "that is not guaranteed to be optimal, perfect, or rational, 
+        but is nevertheless sufficient for reaching an immediate, short-term goal or approximation". When using
+        backtracking, it makes sense to use a heuristic to chose the next box that will be filled in with an 
+        allowed guess. One reasonable heuristic is to choose the box with the shortest list of allowable values - 
+        the Minimum Remaining Values (MRV) heuristic.  Another useful heuristic, which can be used together with MRV,
+        is the degree heuristic, which chooses the variable involved in the largest number of constraints with remaining 
+        unassigned variables.</p>
+
+    </main>
+    
+    <footer>Page made by Penny Rowe.</footer>
+</body>
+</html>

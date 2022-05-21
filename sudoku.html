@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku</title>
+
+    <!-- Code to include nav bar-->
+    <div id="nav">
+        <a href="nav.html">Navigation Page</a>
+    </div>
+    <!--General styles; common to most pages-->
+    <link rel="stylesheet" href="styles.css">
+    <!--JavaScript for nav bar-->
+    <script src="script.js"></script>
+
+    <!--Styles specific to this page-->
+    <link rel="stylesheet" href="sudoku/sudokuStyles.css">
+</head>
+
+<body>
+    <header> <h1>Sudoku</h1> </header> 
+    <main>
+    <div id="grid-container-puzzle">
+
+        <!-- Row 1, column 1 -->
+        <div>
+            <fieldset id="selections">
+                <legend>Selections</legend>
+              
+                <!-- Choose a puzzle from a drop-down list -->
+                Choose Puzzle<br>
+                <select name="puzzle" id="dropdownpuzzle" class="button">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="evil">Evil</option>
+                    <option value="random">Random</option>
+                </select>
+                <br>    
+                <br>
+
+                Choose Solver <br>
+                
+                <button name="solverDemoBacktrack" id="solverDemoBacktrack" class="button">Backtracking</button>
+                <br>
+                <button name="playSudokuSolver" id="playSudokuSolver" class="button">AC-3 and Backtracking</button>
+                <br>
+
+                 <!-- Add later  -->
+                <!-- Read in your own Sudoku file  -->
+                <!-- <input type="file" id="file-input">
+                <button id="read-button">Load File</button>
+                <pre id="file-contents"></pre>  -->
+
+            </fieldset>
+             
+            <br> <br>
+            <div class="colorkeybox">
+                <h2>Key for colors</h2>
+                <p class="backtrack">Backtracking</p>
+                <p class="finalAC3">AC-3, solved</p>
+                <p class="backtrackPlusAC3">AC-3, value may change</p>
+            </div>
+            
+        </div>
+
+        <!-- Row 1, column 2 -->
+        <div>
+            <!-- Print the Sudoku board to the screen -->
+            <table id="sudokuGraphic"> </table>
+
+            <!-- Put the fieldset in a div so we can center it -->
+            <div id="sudokuControls">
+                <fieldset id="controls">
+                    <legend>Controls</legend>
+                
+                    <!-- Play Controls -->
+                    <button type="button" id="rewindToBeg" class="button controlButton">Restart</button>
+                    <button type="button" id="rewind" class="button controlButton">Rewind</button>
+                    <button type="button" id="pauseButton" class="button controlButton">Pause</button>
+                    <button type="button" id="playPause" class="button controlButton">Play</button>
+                    <button type="button" id="forwardToEnd" class="button controlButton">Finish</button>
+
+                    <!-- Slider for controlling the speed of playback -->
+                    Speed <input class="slider" type=range min=0 max=300 value=20 class="anim-speed"></input>
+
+                    <br>
+                    <br>
+                    <!-- Button to show the domain of each square -->
+                    <button type="button" id="showDomainButton" class="button controlButton" value="OFF">
+                        Show the domain
+                    </button>
+                    &nbsp; &nbsp; 
+                    <button type="button" id="step" class="button controlButton">Step</button>
+                    <button type="button" id="stepBack" class="button controlButton">Undo</button>
+                </fieldset>
+            </div>
+
+        </div>
+
+        <!-- Row 1, column 3 -->
+        <div>
+            <p class="state"></p>
+            <p class="explanation"></p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Code for playing Sudoku, in reverse order of dependency -->
+    <script src="sudoku/boardPlot.js"></script>
+    <script src="sudoku/getUnassignedVariable.js"></script>
+    <script src="sudoku/variable.js"></script>
+    <script src="sudoku/constraints.js"></script>
+    <script src="sudoku/backtrack.js"></script>
+    <script src="sudoku/solver.js"></script>
+    <script src="sudoku/sudoku.js"></script>   <!-- Calls code in solver.js -->
+
+
+    <br>
+    <br>
+    <br>
+
+    <div class="spacebelow">
+        <h2>Read about <a href="solvingSudoku.html">how the solver works</a>.</h2>
+    </div>
+
+    </main>
+
+    <footer>
+        <p>Page created by Penny Rowe.</p>
+    </footer>
+    
+</body>
+</html>

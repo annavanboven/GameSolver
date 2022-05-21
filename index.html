@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>GameSolver Home Page</title>
+        
+        <!-- Code to include nav bar-->
+        <div id="nav">
+            <a href="nav.html">Navigation Page</a>
+        </div>
+        <script src="indexScripts.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    
+    <!-- Leave some room for the nav bar -->
+    <h1>Game Solver Hub</h1>
+
+    <body>
+        <div id="grid-container">
+            <!-- Sudoku -->
+            <div>
+                <!-- Clicking image shows Sudoku being solved -->
+                <button id="sudokuButton" class="puzzleBox"><img src="sudoku/sudoku_easy_original.jpg" id="sudokuImage" alt="Image of Sudoku puzzle"></button>
+                <br>
+                <a href="sudoku.html"><button class="button">Run Sudoku Solver</button></a>
+            </div>
+
+            <!-- Connect Four -->
+            <div>
+                <div id="connectFourButtonDiv">
+                    <button id="connectFourButton" class="puzzleBox"><img src="connect-four/ConnectFourWin.jpg" alt="Image of Connect Four game rack" id="connectFourImage"></button>
+                </div>
+                <div>
+                    <a href="connectFour.html"><button class="button">Run Connect Four Solver</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Request code -->
+        <div class="spacebelow">
+            <p>Click here to <a href = "https://forms.gle/1BCwXMuHTcQKq1Bm7">request the code for a solver.</a> </li></p>
+        </div>
+
+        <footer id="footerdiv">
+            <p>Website created by Anna Van Boven and Penny Rowe.</p>
+            <p><a href="https://commons.wikimedia.org/w/index.php?curid=17635567">Connect Four image</a>
+            by Silver Spoon - Own work, CC BY-SA 3.0.</p>
+        </footer>
+        
+    </body>
+
+</html>
+ 

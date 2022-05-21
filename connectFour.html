@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Connect Four</title>
+
+        <!-- Code to include nav bar-->
+        <div id="nav">
+            <a href="nav.html">Navigation Page</a>
+        </div>
+        <!--General styles; common to most pages-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Sytles specific to connectFour-->
+        <link rel = "stylesheet" href = "connect-four/cf-style.css">
+        <!--JavaScript for nav bar-->
+         <script src="script.js"></script>
+
+    </head>
+
+      
+    <body>
+        <h1>Connect Four</h1>
+
+        <div class = "flex-container">
+
+            <div class = "mm-walkthrough">
+                <div class = "mm-max"></div>
+
+            <div class = "mm-min"></div>    
+        </div>
+        <div class = "game">
+
+            <table id = "board">
+                <tr ><td colspan = "7">
+                    <h3 class = "player-turn">Your Turn!</h3>
+                </td></tr>
+                <tr>
+                    <td><canvas class="aboveTable" width = "60" height = "60" ></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="aboveTable" width = "60" height = "60"></canvas></td>
+                </tr>
+
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+
+                </tr>
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                </tr>
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                </tr>
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                </tr>
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                </tr>
+                <tr class = "row">
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                    <td><canvas class="slot1" width = "60" height = "60"></canvas></td>
+                </tr>
+                <tr class = "row">
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class = "controls">
+            <div class="reset button" class = "button">Reset</div>
+
+                <div class = "space"></div>
+
+                <div class = "automaticplay button">
+                    Select how you would like to play: <br>
+                    <input type="radio" id="auto" name="autoMan" value="auto" checked = "checked">
+                    <label for="auto">Computer plays automatically</label><br>
+                    <input type="radio" id="manual" name="autoMan" value="man">
+                    <label for="manual">Step through computer moves</label><br>
+                </div>
+
+                <div class = "space"></div>
+
+                <div class = "next-move button">Next Move</div>
+
+                <div class = "space"></div>
+
+                <div class = "slidecontainer button">Set Minimax Depth: <br>
+                    1<input type = "range" min = "1" max = "4" steps = "1" value = "1" class = "slider" >4
+                </div>
+
+                <div class = "space"></div>
+
+                <div class = "walkthrough button">Show Minimax Walkthrough</div>
+
+            </div>
+    </div>
+
+    <!-- A little extra space on the bottom -->
+    <div class="spacebelow">
+    </div>
+
+    <div class = "spaceabove">
+        <h3><p>The computer solves Connect Four using minimax. <a href = "solvingCF.html">Read here</a> for more information on minimax.</p></h3>
+    </div>
+
+    <script src = "connect-four/graphics.js"></script>
+    <script src = "connect-four/computerPlayer.js"></script>
+    <script src = "connect-four/connectFour.js"></script>
+
+    <!-- A little extra space on the bottom -->
+    <div class="spacebelow">
+    </div>
+
+    <!-- Standardized footer so one style for all -->
+    <footer id="footerdiv">
+        <p>Page created by Anna Van Boven.</p>
+    </footer>
+
+    </body>
+
+
+    
+</html>

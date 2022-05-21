@@ -1,0 +1,259 @@
+/* Styles for Sudoku page (sudoku.html) */
+
+
+/* A container for all the solver elements */
+#grid-container-puzzle {
+   display: grid;
+   justify-content: space-evenly;
+   grid-template-columns: repeat(auto-fill, 380px);
+   grid-template-rows: auto;
+   max-width: 1200px;
+}
+
+/* Each solver element is in a div */
+#grid-container-puzzle > div {
+   text-align: center;
+}
+
+/* Center the Sudoku board */
+#sudokuGraphic {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+fieldset > #selections {
+   width: 380px;
+   align-items: center;
+   align-content: center;
+   padding-left: 2%;
+}
+
+fieldset #controls {
+   width: 380px;
+   align-items: center;
+   align-content: center;
+   padding-left: 2%;
+}
+
+/* Center the control fieldset */
+#sudokuControls {
+   text-align: center;
+   width: 380px;
+   padding-top: 20px;
+}
+
+table {
+   border-collapse: collapse;
+   border: solid 2px black;
+   background-color: white;
+}
+
+td:nth-child(3), th:nth-child(3) {
+   border-right: solid 2px black;
+}
+td:nth-child(6), th:nth-child(6) {
+   border-right: solid 2px black;
+}
+tr:nth-child(3) {
+   border-bottom: solid 2px black;
+}
+tr:nth-child(6) {
+   border-bottom: solid 2px black;
+}
+
+td {
+   width: 38px;
+   height: 38px;
+   border: 1px solid gray;
+   text-align: center;
+}
+
+/* Default Sudoku box styling */
+/* Ok fonts: TNR, Calibri, Courier New */
+/* not ok fonts: Helvetica, Arial */
+/*    Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+.sudokubox {
+   color: gray;
+   font-size: x-large;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sudokubox.domain {
+   color: black;
+   font-size: x-small;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   line-height: 0;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   padding-top: 0%;
+   padding-bottom: 0%;
+}
+
+/* styling for fixed numbers (original grid) */
+.sudokubox.fixed {
+   color: black;
+   font-weight: bold;
+}
+
+/* styling for numbers determined with AC-3 */
+.sudokubox.AC3 {
+   color: red;
+}
+
+.backtrack {
+   color: green;
+}
+
+.finalAC3 {
+   color: blue;
+}
+.backtrackPlusAC3 {
+   color: orange;
+}
+
+.sudokubox.boxborder {
+   /* Add a border to outline the square */
+   border: solid 2px blue;
+}
+
+/* Selected for solver-type buttons */
+.selectedsolver {
+   margin-left: 3px;
+   margin-right: 3px;
+   margin-bottom: 3px;
+   padding: 7px 9px 7px 9px;
+   border: 2px solid yellow;
+   outline: 1px solid rgb(17, 49, 30);
+}
+
+/* Control button overrides for standard button  */
+.controlButton {
+   margin-left: 3px;
+   margin-right: 3px;
+   margin-bottom: 20px;
+   padding: 4px 4px;
+   border: 2px solid;
+   border-color: rgb(39, 116, 70);
+   outline: 1px solid rgb(17, 49, 30);
+}
+
+/* Selected buttons */
+.selected {
+   padding: 4px 4px;
+   border: 2px solid yellow;
+   outline: 1px solid rgb(17, 49, 30);
+}
+
+/* Styling for the slider needs to be done for every browser */
+/* First remove the auto-styling */
+input[type="range"]{
+   -webkit-appearance: none;
+   width: 80%;
+   height: 8px;
+   outline: none;
+   appearance: none;
+   border: none;
+   border-radius: 30px;
+}
+input[type="range"]::-moz-focus-outer {
+     border: 0;
+}
+input[type="range"]:hover {
+   outline: none;
+}
+ 
+/* Chrome */
+input[type="range"]::-webkit-slider-thumb {
+   appearance: none;
+   width: 18px;
+   height: 18px;
+   background-color: rgb(25, 75, 45);
+   cursor: pointer;
+   border-radius: 30px;  /* makes it a circle */
+   outline: none;
+}
+
+/* Styling the track */
+input[type="range"]::-webkit-slider-runnable-track {
+   background: gray;
+   border: none;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+   width: 18px;
+   height: 18px;
+   background: silver;
+   cursor: pointer;
+   border-radius: 50%;
+   /*box-shadow: 1px 1px 1px rgb(25, 75, 45), 0px 0px 1px rgb(25, 75, 45);*/
+   border: 3px solid rgb(25, 75, 45);
+}
+
+input[type="range"]::-moz-range-progress {
+   background-color: rgb(25, 75, 45);
+   height: 100%;
+   border-radius:30px;
+   border: none;
+}
+input[type="range"]::-moz-range-track {  
+   background-color: #ccc;
+   border-radius:30px;
+   border: none;
+   height: 100%;
+}
+ 
+/* IE */
+input[type="range"]::-ms-fill-lower {
+   background-color: rgb(25, 75, 45);
+   height: 100%;
+   border-radius: 30px;
+   border: none;
+}
+
+input[type="range"]::-ms-fill-upper {  
+   background-color: #ccc;
+   border-radius: 30px;
+   border: none;
+   height: 100%;
+}
+
+/* DOES THE FOLLOWING DO ANYTHING??? */
+
+/* tooltip style */
+.tooltip {
+   position:relative;
+   padding: 30px 0;
+   
+}
+
+.tooltip .tooltiptext {
+   visibility: hidden;
+   width: 100px;
+   background-color: #f38080;
+   color: #fff;
+   text-align: center;
+   padding: 5px 0;
+   border-radius: 6px;
+   position: absolute;
+   z-index: 1;
+   top: -5px;
+   left:calc(50% - 50px);
+}
+ 
+.tooltip:hover .tooltiptext {
+   visibility: visible;
+}
+ 
+.tooltip .tooltiptext::after {
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #f38080 transparent transparent transparent;
+}
+ 
+
